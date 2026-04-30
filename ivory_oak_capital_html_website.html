@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ivory Oak Capital LLC</title>
+  <meta name="description" content="Ivory Oak Capital acquires and repositions undervalued residential assets with disciplined execution and defined exit timelines." />
+  <style>
+    :root {
+      --black: #0b0b0b;
+      --ivory: #f5f2ea;
+      --gold: #c9a85d;
+      --gold-dark: #9c7a34;
+      --text: #111111;
+      --muted: #6f6a60;
+      --white-soft: rgba(255,255,255,0.72);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: var(--ivory);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--black);
+      color: var(--ivory);
+      padding: 110px 0 120px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(201,168,93,0.28), transparent 42%);
+      opacity: 0.55;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 780px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.05;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      margin-bottom: 26px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 19px;
+      color: #d8d2c4;
+      margin-bottom: 34px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 18px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--gold);
+      color: #000;
+    }
+
+    .button.secondary {
+      border: 1px solid rgba(201,168,93,0.65);
+      color: var(--ivory);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.6fr;
+      gap: 54px;
+      align-items: start;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.15;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+    }
+
+    .card h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .card p {
+      color: rgba(0,0,0,0.68);
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+    }
+
+    .icon {
+      color: var(--gold-dark);
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .light-band {
+      background: rgba(255,255,255,0.62);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .dark-card {
+      background: var(--black);
+      color: var(--ivory);
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: 0 18px 44px rgba(0,0,0,0.16);
+    }
+
+    .dark-card p {
+      color: #d8d2c4;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .deal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .deal-card {
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+    }
+
+    .deal-card h3 {
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .deal-card p {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      margin-bottom: 9px;
+    }
+
+    .deal-card span {
+      color: var(--muted);
+    }
+
+    .contact {
+      background: var(--black);
+      color: var(--ivory);
+    }
+
+    .contact p {
+      color: #d8d2c4;
+    }
+
+    .contact-box {
+      margin-top: 30px;
+      max-width: 460px;
+      border: 1px solid rgba(201,168,93,0.35);
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .contact-box .name {
+      font-size: 24px;
+      color: var(--ivory);
+      margin-bottom: 2px;
+    }
+
+    .contact-box p {
+      font-family: Arial, sans-serif;
+      margin-bottom: 6px;
+    }
+
+    footer {
+      padding: 26px 0;
+      background: var(--black);
+      color: rgba(245,242,234,0.58);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      border-top: 1px solid rgba(201,168,93,0.18);
+    }
+
+    @media (max-width: 800px) {
+      .section-grid,
+      .two-col,
+      .deal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 84px 0 92px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">Ivory Oak Capital LLC</div>
+      <h1>Disciplined acquisition. Controlled execution. Aligned outcomes.</h1>
+      <p>Ivory Oak Capital acquires and repositions undervalued residential assets with a focus on defined timelines, conservative underwriting, and disciplined execution from acquisition through exit.</p>
+      <div class="buttons">
+        <a class="button primary" href="#contact">Discuss Opportunities</a>
+        <a class="button secondary" href="#strategy">View Strategy</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="strategy">
+    <div class="container section-grid">
+      <div>
+        <div class="eyebrow">Investment Focus</div>
+        <h2 class="section-title">A selective approach to residential value creation.</h2>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">▱</div>
+          <h3>Acquire</h3>
+          <p>Identify undervalued residential assets that meet strict acquisition and margin criteria.</p>
+        </div>
+        <div class="card">
+          <div class="icon">✓</div>
+          <h3>Control</h3>
+          <p>Manage renovation scope, budget discipline, and project timelines with a hands-on approach.</p>
+        </div>
+        <div class="card">
+          <div class="icon">↗</div>
+          <h3>Exit</h3>
+          <p>Reposition assets for resale with defined exit strategy and investor-aligned outcomes.</p>
+        </div>
+        <div class="card">
+          <div class="icon">◇</div>
+          <h3>Partner</h3>
+          <p>Work with select capital partners on a deal-by-deal basis with transparent structure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light-band">
+    <div class="container">
+      <div style="max-width: 760px; margin-bottom: 40px;">
+        <div class="eyebrow">Operator Profile</div>
+        <h2 class="section-title">Built around execution, not speculation.</h2>
+      </div>
+      <div class="two-col">
+        <div class="dark-card">
+          <h3>Company & Operator</h3>
+          <p>Ivory Oak Capital identifies and acquires undervalued residential assets, repositioning them through targeted improvements with a focus on controlled execution and defined exit timelines.</p>
+          <br />
+          <p>Led by Jacob Hewitt, with a hands-on background in construction and project execution, enabling accurate underwriting, cost control, and disciplined execution from acquisition through exit.</p>
+        </div>
+        <div class="card">
+          <h3>Executed Project Example</h3>
+          <div class="stats">
+            <div><div class="stat-label">Acquisition</div><div class="stat-value">$140,000</div></div>
+            <div><div class="stat-label">Renovation</div><div class="stat-value">$15,000</div></div>
+            <div><div class="stat-label">Total Basis</div><div class="stat-value">$155,000</div></div>
+            <div><div class="stat-label">Exit</div><div class="stat-value">$238,000</div></div>
+          </div>
+          <p>The asset was acquired below market value and repositioned through targeted improvements, resulting in a controlled and profitable exit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="eyebrow">Deal Profiles</div>
+      <h2 class="section-title" style="margin-bottom: 36px;">Flexible deal ranges. Consistent underwriting discipline.</h2>
+      <div class="deal-grid">
+        <div class="deal-card">
+          <h3>Low</h3>
+          <p><span>Purchase:</span> <strong>$80k</strong></p>
+          <p><span>Rehab:</span> <strong>$30k</strong></p>
+          <p><span>Exit:</span> <strong>$170k</strong></p>
+          <p><span>Target Profit:</span> <strong>~$40k</strong></p>
+        </div>
+        <div class="deal-card">
+          <h3>Mid</h3>
+          <p><span>Purchase:</span> <strong>$180k</strong></p>
+          <p><span>Rehab:</span> <strong>$60k</strong></p>
+          <p><span>Exit:</span> <strong>$310k</strong></p>
+          <p><span>Target Profit:</span> <strong>~$55k</strong></p>
+        </div>
+        <div class="deal-card">
+          <h3>High</h3>
+          <p><span>Purchase:</span> <strong>$350k+</strong></p>
+          <p><span>Rehab:</span> <strong>$90k</strong></p>
+          <p><span>Exit:</span> <strong>$520k+</strong></p>
+          <p><span>Target Profit:</span> <strong>~$70k+</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div style="max-width: 760px;">
+        <div class="eyebrow">Contact</div>
+        <h2 class="section-title">Review opportunities on a deal-by-deal basis.</h2>
+        <p style="margin-top: 20px; max-width: 700px;">We work with a limited number of investment partners. Each opportunity is presented with full financial transparency prior to commitment.</p>
+        <div class="contact-box">
+          <div class="name">Jacob Hewitt</div>
+          <p>Managing Member</p>
+          <br />
+          <p>331-220-5714</p>
+          <p><a href="mailto:jacob@ivoryoakpartners.com">jacob@ivoryoakpartners.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© Ivory Oak Capital LLC. All rights reserved.</div>
+  </footer>
+</body>
+</html>
